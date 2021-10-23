@@ -164,6 +164,34 @@ docker-compose -f .\docker-compose.development.yml up -d
 npm run start:dev
 ```
 
+Una vez terminado de levantar el proyecto estara disponible el [Servicio de swagger](localhost:3000/api).
+
+### Token de prueba (Usuario) 👼
+
+Este token debe ir en los header de Authorization o puede ejecutar directamente del servicio de [Servicio de swagger](localhost:3000/api) y agregando dicho token.
+
+```
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6IkdxUk5ubktDUFdvanM1TEpLeHBRUCJ9.eyJpc3MiOiJodHRwczovL2VkaGluZS1sdGRhLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJZdHZwYldoNGZYaFJ1b042NDhUUjFmVzBVV2l2amZlNUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly90ZW1wbGF0ZS1uZXN0anMtYXBpLXByaXZhdGUtYXV0aDAvYXBpIiwiaWF0IjoxNjM1MDA2Njk4LCJleHAiOjE2MzUwOTMwOTgsImF6cCI6Ill0dnBiV2g0ZlhoUnVvTjY0OFRSMWZXMFVXaXZqZmU1Iiwic2NvcGUiOiJjb21tZW50OmRlbGV0ZSBjb21tZW50c0J5UG9zdElkOnNlbGVjdCBwb3N0OmNyZWF0ZSBwb3N0OnVwZGF0ZSBwb3N0OmRlbGV0ZSBwb3N0QnlJZDpzZWxlY3QiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJwZXJtaXNzaW9ucyI6WyJjb21tZW50OmRlbGV0ZSIsImNvbW1lbnRzQnlQb3N0SWQ6c2VsZWN0IiwicG9zdDpjcmVhdGUiLCJwb3N0OnVwZGF0ZSIsInBvc3Q6ZGVsZXRlIiwicG9zdEJ5SWQ6c2VsZWN0Il19.KCx87awXKlPgcphbdybjj39SUoTkH_sIrEp3w94hFgip704Lls1uKRyzN4iI-6MUHBZfazuHhWApfk9wQlRv0UooRtideSY64DSPT9A9gjV6HkyKAdgAgza1CPj6vK8zI1BxEv66DeJNd1WG_dsVNnaox1rpgVM-0bK9FPn0poE8HJyvdyDlRMzGm462BejkwvOk3C17-uJZnVp73STVFW_fOcRu_r6AMP2P8rvRZ7EeeOIxnTuOKaG6WMGOFCdyfbDhwdrLgqwnlRw96-QwdFaNP_fF2PRkeBBx09dqO4iwOfpVh9K24TaNui8fC2ApdDU-fzf8QvEOBFv8ARiwUg
+```
+
+Este token contempla los siguientes permisos:
+
+```
+"comment:delete",
+"commentsByPostId:select",
+"post:create",
+"post:update",
+"post:delete",
+"postById:select"
+```
+
+### Test's 📌
+
+```
+ npm run test
+ npm run test:cov
+```
+
 ## Autor ✒️
 
 * **Sergio Andrés Orellana Roa** - **Edhine** - *Desarrollador full-stack* - [Linkedin](https://www.linkedin.com/in/sergio-andres-orellana-roa/) - [Github](https://github.com/Edhine)

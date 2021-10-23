@@ -1,73 +1,180 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
-</p>
+# backend-challenge-developer-ADDIKA
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+_Este proeycto contempla el desarrollo del challenge ._
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Comenzando 🚀
 
-## Description
+_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+**Estructura de proyecto**
 
-## Installation
-
-```bash
-$ npm install
+```
+├── docker-compose.development.yml
+├── jwtExamples
+|  └── user.txt
+├── nest-cli.json
+├── out.txt
+├── package-lock.json
+├── package.json
+├── README.md
+├── src
+|  ├── app.module.ts
+|  ├── app.service.ts
+|  ├── main.ts
+|  ├── modules
+|  |  ├── comments
+|  |  |  ├── application
+|  |  |  |  ├── commands
+|  |  |  |  |  ├── create-comment.command.ts
+|  |  |  |  |  ├── create-comment.handler.spec.ts
+|  |  |  |  |  ├── create-comment.handler.ts
+|  |  |  |  |  ├── delete-comment.command.ts
+|  |  |  |  |  ├── delete-comment.handler.spec.ts
+|  |  |  |  |  └── delete-comment.handler.ts
+|  |  |  |  ├── events
+|  |  |  |  |  └── integration.ts
+|  |  |  |  └── queries
+|  |  |  |     ├── comment.query.ts
+|  |  |  |     ├── find-comments-by-post-id.handler.spec.ts
+|  |  |  |     ├── find-comments-by-post-id.handler.ts
+|  |  |  |     ├── find-comments-by-post-id.query.ts
+|  |  |  |     └── find-comments-by-post-id.result.ts
+|  |  |  ├── comments.module.ts
+|  |  |  ├── domain
+|  |  |  |  ├── comment.ts
+|  |  |  |  ├── error.ts
+|  |  |  |  ├── factory.ts
+|  |  |  |  └── repository.ts
+|  |  |  ├── infrastructure
+|  |  |  |  ├── entities
+|  |  |  |  |  ├── base.entity.ts
+|  |  |  |  |  └── comment.entity.ts
+|  |  |  |  ├── message
+|  |  |  |  |  └── integration-event.publisher.ts
+|  |  |  |  ├── queries
+|  |  |  |  |  └── comment.query.ts
+|  |  |  |  └── repositories
+|  |  |  |     └── comment.repository.ts
+|  |  |  └── interface
+|  |  |     ├── comments.controller.ts
+|  |  |     ├── dto
+|  |  |     |  ├── create-comment.body.dto.ts
+|  |  |     |  ├── delete-comment.param.dto.ts
+|  |  |     |  └── find-comments-by-post-id.param.dto.ts
+|  |  |     └── response-description.ts
+|  |  └── posts
+|  |     ├── application
+|  |     |  ├── commands
+|  |     |  |  ├── create-post.command.ts
+|  |     |  |  ├── create-post.handler.spec.ts
+|  |     |  |  ├── create-post.handler.ts
+|  |     |  |  ├── delete-post.command.ts
+|  |     |  |  ├── delete-post.handler.spec.ts
+|  |     |  |  ├── delete-post.handler.ts
+|  |     |  |  ├── update-post.command.ts
+|  |     |  |  ├── update-post.handler.spec.ts
+|  |     |  |  └── update-post.handler.ts
+|  |     |  ├── events
+|  |     |  |  └── integration.ts
+|  |     |  └── queries
+|  |     |     ├── find-post-by-id.handler.spec.ts
+|  |     |     ├── find-post-by-id.handler.ts
+|  |     |     ├── find-post-by-id.query.ts
+|  |     |     ├── find-post-by-id.result.ts
+|  |     |     ├── find-posts.handler.spec.ts
+|  |     |     ├── find-posts.handler.ts
+|  |     |     ├── find-posts.query.ts
+|  |     |     ├── find-posts.result.ts
+|  |     |     └── post.query.ts
+|  |     ├── domain
+|  |     |  ├── error.ts
+|  |     |  ├── events
+|  |     |  |  └── update-post.event.ts
+|  |     |  ├── factory.ts
+|  |     |  ├── post.ts
+|  |     |  └── repository.ts
+|  |     ├── infrastructure
+|  |     |  ├── entities
+|  |     |  |  ├── base.entity.ts
+|  |     |  |  └── post.entity.ts
+|  |     |  ├── message
+|  |     |  |  └── integration-event.publisher.ts
+|  |     |  ├── queries
+|  |     |  |  └── post.query.ts
+|  |     |  └── repositories
+|  |     |     └── post.repository.ts
+|  |     ├── interface
+|  |     |  ├── dto
+|  |     |  |  ├── create-post.body.dto.ts
+|  |     |  |  ├── delete-post.param.ts
+|  |     |  |  ├── find-post-by-id.param.dto.ts
+|  |     |  |  ├── find-post-by-id.response.dto.ts
+|  |     |  |  ├── find-posts.query.dto.ts
+|  |     |  |  ├── find-posts.response.dto.ts
+|  |     |  |  ├── update-post.body.dto.ts
+|  |     |  |  └── update-post.param.dto.ts
+|  |     |  ├── posts.controller.ts
+|  |     |  └── response-description.ts
+|  |     └── posts.module.ts
+|  └── shared
+|     ├── application
+|     |  ├── application.module.ts
+|     |  ├── auth
+|     |  |  ├── auth.module.ts
+|     |  |  └── authz
+|     |  |     ├── authz.module.ts
+|     |  |     └── jwt.strategy.ts
+|     |  ├── decorators
+|     |  |  ├── permissions.decorator.ts
+|     |  |  └── public.decorator.ts
+|     |  ├── guards
+|     |  |  ├── guards.module.ts
+|     |  |  ├── jwt-auth.guard.ts
+|     |  |  └── permisisions.guard.ts
+|     |  └── logger
+|     |     ├── logger.module.ts
+|     |     └── myLogger.service.ts
+|     └── shared.module.ts
+├── test
+|  ├── app.e2e-spec.ts
+|  └── jest-e2e.json
+├── tsconfig.build.json
+└── tsconfig.json
 ```
 
-## Running the app
+## Requerimientos 📦
 
-```bash
-# development
-$ npm run start
+* docker-compose
+* docker
+* npm
 
-# watch mode
-$ npm run start:dev
+### Instalación 🔧
 
-# production mode
-$ npm run start:prod
+```
+npm install
 ```
 
-## Test
+## Producción ⌨️
 
-```bash
-# unit tests
-$ npm run test
+Estas son las instrucciones para poder levantar el proyecto correctamente, ya que este cuenta con validaciones, por ejemplo: conexion disponible a la base de datos
 
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
+```
+"Esperar que levante correctamente el mysql y el rabbitmq, cuando termine, te devolvera automaticamente la terminal"
+docker-compose -f .\docker-compose.development.yml up -d
+npm run start:dev
 ```
 
-## Support
+## Autor ✒️
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+* **Sergio Andrés Orellana Roa** - **Edhine** - *Desarrollador full-stack* - [Linkedin](https://www.linkedin.com/in/sergio-andres-orellana-roa/) - [Github](https://github.com/Edhine)
 
-## Stay in touch
+## Licencia 📄
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para detalles.
 
-## License
+## Retroalimentación
 
-Nest is [MIT licensed](LICENSE).
+Todo comentario y correcciones, no dudes en mencionarlas 📢, me ayudas a mejorar este proyecto ❤.
+
+---
+⌨️ con ❤️ por [Edhine](https://github.com/Edhine) 😊

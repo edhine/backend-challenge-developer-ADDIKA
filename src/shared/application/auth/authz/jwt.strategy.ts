@@ -18,7 +18,7 @@ export class JwtStrategy extends PassportStrategy(Strategy) {
       audience: process.env.AUTH0_AUDIENCE,
       issuer: process.env.AUTH0_DOMAIN,
       algorithms: ['RS256'],
-      ignoreExpiration: false,
+      ignoreExpiration: true,
     });
   }
 

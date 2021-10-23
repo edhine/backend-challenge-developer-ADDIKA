@@ -11,9 +11,21 @@ async function bootstrap() {
   app.useLogger(myLogger);
 
   const configSwagger = new DocumentBuilder()
-    .setTitle('template nestjs private auth0 example')
+    .setTitle('backend-challenge-developer-ADDIKA')
     .setVersion('1.0')
-    .addTag('example')
+    .setContact('Sergio Andrés Orellana Roa', 'https://www.linkedin.com/in/sergio-andres-orellana-roa/', 'sergio.andres.orellana.roa@gmail.com')
+
+    .addBearerAuth(
+      { 
+        description: `Please enter token in following format: Bearer <JWT>`,
+        name: 'Authorization',
+        bearerFormat: 'Bearer',
+        scheme: 'Bearer',
+        type: 'http',
+        in: 'Header'
+      },
+      'access-token',
+    )
     .build();
   const document = SwaggerModule.createDocument(app, configSwagger);
   SwaggerModule.setup('api', app, document);

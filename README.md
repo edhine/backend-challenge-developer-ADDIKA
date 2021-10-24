@@ -169,9 +169,10 @@ npm install
 Estas son las instrucciones para poder levantar el proyecto correctamente, ya que este cuenta con validaciones, por ejemplo: conexion disponible a la base de datos
 
 ```
+docker-compose -f .\docker-compose.development.yml up -d
+
 Esperar que levante correctamente el mysql y el rabbitmq, cuando termine, te devolvera automaticamente la terminal
 
-docker-compose -f .\docker-compose.development.yml up -d
 npm run start:dev
 ```
 

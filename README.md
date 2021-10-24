@@ -142,6 +142,16 @@ _Estas instrucciones te permitirán obtener una copia del proyecto en funcionami
 └── tsconfig.json
 ```
 
+**Tecnologias, Librerias, Etc. Utilizadas**
+* NestJS
+* Jest
+* Auth0
+* Swagger Server
+* DDD
+* Guards (Middlewares)
+* Mysql
+* rabbitmq
+
 ## Requerimientos 📦
 
 * docker-compose

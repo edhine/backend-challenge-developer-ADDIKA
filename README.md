@@ -208,9 +208,6 @@ Este token contempla los siguientes permisos:
 
 * **Sergio Andrés Orellana Roa** - **Edhine** - *Desarrollador full-stack* - [Linkedin](https://www.linkedin.com/in/sergio-andres-orellana-roa/) - [Github](https://github.com/Edhine)
 
-## Licencia 📄
-
-Este proyecto está bajo la Licencia MIT - mira el archivo [LICENSE.md](LICENSE.md) para detalles.
 
 ## Retroalimentación
 
